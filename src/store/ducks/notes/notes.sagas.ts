@@ -1,7 +1,7 @@
 import * as Effects from "redux-saga/effects";
 import { CallEffect, put, PutEffect } from "redux-saga/effects";
 import { AnyAction } from "redux";
-import { Note, NotesActionsTypes, PayloadActionType } from "./notes.types";
+import { Note, NotesActionsTypes, PayloadActionDeleteType, PayloadActionType } from "./notes.types";
 import { NotesService } from "../../../services/notes/note-service";
 import {
   deleteNoteSuccess,
@@ -49,7 +49,7 @@ export function* postNote({
 
 export function* deleteNote({
   payload,
-}: PayloadActionType): Generator<
+}: PayloadActionDeleteType): Generator<
   CallEffect | PutEffect<AnyAction>,
   void,
   AxiosResponse<Note>
@@ -57,7 +57,7 @@ export function* deleteNote({
   try {
     yield call(NotesService.deleteNote, payload);
 
-    yield put(deleteNoteSuccess(parseInt(payload.toString())));
+    yield put(deleteNoteSuccess(payload));
   } catch (error: any) {
     axiosErrorHandler(error);
   }

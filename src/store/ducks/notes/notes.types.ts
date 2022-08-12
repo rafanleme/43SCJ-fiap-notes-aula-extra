@@ -23,6 +23,10 @@ export interface PayloadActionType extends ActionType {
   payload: Note | PostNoteRequest | number;
 }
 
+export interface PayloadActionDeleteType extends ActionType {
+  payload: number;
+}
+
 export interface Note {
   id: number;
   text: string;
