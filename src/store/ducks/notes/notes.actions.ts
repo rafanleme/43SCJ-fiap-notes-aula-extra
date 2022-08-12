@@ -12,16 +12,7 @@ export const getNotesRequest = (): ActionType =>
 
 export const getNotesSuccess = (response: Note[]): ActionType =>
   action(NotesActionsTypes.GET_NOTES_SUCCESS, response);
-
-export const postNoteRequest = (newNote: PostNoteRequest): PayloadActionType =>
-  action(NotesActionsTypes.POST_NOTE_REQUEST, newNote);
-
-export const postNoteSuccess = (response: Note): PayloadActionType =>
-  action(NotesActionsTypes.POST_NOTE_SUCCESS, response);
-
-export const postNoteFailure = (): ActionType =>
-  action(NotesActionsTypes.POST_NOTE_FAILURE);
-
+  
 export const deleteNoteRequest = (noteId: number): ActionType =>
   action(NotesActionsTypes.DELETE_NOTE_REQUEST, noteId);
 

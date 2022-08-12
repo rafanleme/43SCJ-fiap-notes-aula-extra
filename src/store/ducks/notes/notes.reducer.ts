@@ -18,22 +18,6 @@ export default function (state = initialState, action: AnyAction) {
     case NotesActionsTypes.GET_NOTES_SUCCESS:
       return { ...state, isLoadingGetNotes: false, notes: action.payload };
 
-    case NotesActionsTypes.POST_NOTE_REQUEST:
-      return { ...state, isSuccessPostNote: undefined };
-
-    case NotesActionsTypes.POST_NOTE_SUCCESS:
-      return {
-        ...state,
-        isSuccessPostNote: true,
-        notes: [...state.notes, action.payload],
-      };
-
-    case NotesActionsTypes.POST_NOTE_FAILURE:
-      return {
-        ...state,
-        isSuccessPostNote: false,
-      };
-
     case NotesActionsTypes.DELETE_NOTE_REQUEST:
       return {
         ...state,

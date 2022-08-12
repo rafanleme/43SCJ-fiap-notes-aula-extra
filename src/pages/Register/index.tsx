@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../Context/AuthContext";
-import { NotesService } from "../../services/notes/note-service";
-import { Note } from "../../services/notes/types";
 import FormRegister from "./FormRegister";
 import { Container } from "./styles";
 

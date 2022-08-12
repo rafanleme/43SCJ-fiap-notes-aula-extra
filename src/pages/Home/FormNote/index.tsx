@@ -5,7 +5,6 @@ import { Form } from "./styles";
 import * as Yup from "yup";
 import { PostNoteRequest } from "../../../store/ducks/notes/notes.types";
 import { useDispatch, useSelector } from "react-redux";
-import { postNoteRequest } from "../../../store/ducks/notes/notes.actions";
 import { ApplicationState } from "../../../store";
 import { useEffect, useRef } from "react";
 
@@ -31,7 +30,7 @@ function FormNote() {
   };
 
   const handleSubmit = (values: PostNoteRequest) => {
-    dispatch(postNoteRequest(values));
+    // !!! TODO
   };
 
   useEffect(() => {
